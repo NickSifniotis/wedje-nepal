@@ -12,10 +12,21 @@
  Text Domain:  wedje2015
 */
 
+/**
+    Load up some custom fonts.
+**/
+@font-face {
+	font-family: NepTouch;  
+	src: url(fonts/neptouch.ttf);  
+	font-weight: normal;  
+}
+
+
+
 /*########*/
 /*#Header#*/
 /*########*/
-#main-header { position: relative; }
+#main-header { position: relative; font-family: NepTouch; }
 #main-header .container { text-align: left; margin: 0 auto; width: 100%; max-width: 100%; background-color: #B03636; opacity: 0.85; position: absolute; top: 240px; left: 0px; }
 
 /* Override the main theme */
@@ -71,7 +82,7 @@ ul.nav li ul  a { padding: 0 !important; width: 178px; }
 .container #top-menu li:first-of-type { padding-left: 0;}
 .container #top-menu li:last-of-type { padding-right: 0;}
 #top-menu li.current-menu-item > a, #top-menu li.current-menu-ancestor > a { color: #FFFFFF; }
-#top-menu a { font-size: 14px; color: #000000; text-decoration: none; padding: 9px 13px; display: block; }
+#top-menu a { font-size: large; color: #000000; text-decoration: none; padding: 9px 13px; display: block; }
 
 ul.nav > li.current-menu-item > a, ul.nav li.current-menu-ancestor > a { background: #E33200; border: 1px solid #b74425; -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.1); -moz-box-shadow: inset 0 0 10px rgba(0,0,0,0.1); box-shadow: inset 0 0 10px rgba(0,0,0,0.1); font-weight: 800; }
 
@@ -118,6 +129,8 @@ span.wedje_breadcrumbs_after_withparent {  position: absolute; top: 0; right: -2
 #wedje_clear_paragraph { height: 0; width: 0; }
 a { color: #F69620; }
 body { background-color: #171717}
+
+h1 { font-family: NepTouch; font-size: xx-large; }
 
 body.page #main-content .et_pb_button {color: #E33200; }
 /*###########*/
