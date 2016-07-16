@@ -21,6 +21,17 @@
 	font-weight: normal;  
 }
 
+@font-face {
+	font-family: RaleWay;  
+	src: url(fonts/RaleWay-Regular.ttf);  
+	font-weight: normal;  
+}
+
+@font-face {
+	font-family: DonateHeader;  
+	src: url(fonts/DonateFont.otf);  
+	font-weight: normal;  
+}
 
 
 /*########*/
@@ -128,9 +139,11 @@ span.wedje_breadcrumbs_after_withparent {  position: absolute; top: 0; right: -2
 #left-area > .entry { width: 100%; }
 #wedje_clear_paragraph { height: 0; width: 0; }
 a { color: #F69620; }
-body { background-color: #171717}
+body { font-family: RaleWay; background-color: #171717}
 
 h1 { font-family: NepTouch; font-size: xx-large; }
+h2 { font-family: DonateHeader; font-size: xx-large; }
+.et_pb_column_1_4 h2 { font-size: xx-large; }
 
 body.page #main-content .et_pb_button {color: #E33200; }
 /*###########*/
