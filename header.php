@@ -32,11 +32,19 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<?php do_action('et_header_top'); ?>
+<?php
+
+do_action('et_header_top');
+
+if (is_front_page())
+{
+
+?>
 	
     	<header id="main-header">
-		<div class="container">
-			<div id="top-area" class="clearfix">
+		<div class="container" style="padding-bottom: 15px;" >
+			<div id="top-area" class="clearfix" style="padding-top: 15px;">
+			        <img style="width: 30px;" src="http://wedjeideas.com/nepal/wp-content/uploads/2016/07/Favicon.png" />
                     <h1 class="nick-main-title">a colourful journey</h1>
 			</div> <!-- end #top-area -->
 			<?php do_action('et_header_menu'); ?>
@@ -60,7 +68,6 @@
 						else echo($primaryNav);
 					?>
 				</nav>
-				
             </div> <!-- end .container -->
 
 		    <img id="main-header-image" src="http://wedjeideas.com/nepal/wp-content/uploads/2016/07/Pagoda-and-Mountain-Background-Trim.png" alt="" />
@@ -73,4 +80,47 @@
 			if ( $wedje_options['breadcrumb_active'] == 'active' ) get_template_part( 'includes/breadcrumbs'); ?>
 
     	</header> <!-- end #main-header -->
+    	
+<?php
+
+}
+else
+{
+
+?>
+    <header id="main-header-non">
+        <div class="container" style="padding-bottom: 15px;" >
+			<div id="top-area" class="clearfix" style="padding-top: 15px;">
+		        <img style="width: 30px;" src="http://wedjeideas.com/nepal/wp-content/uploads/2016/07/Favicon.png" />
+                <h1 class="nick-main-title">a colourful journey</h1>
+			</div> <!-- end #top-area -->
+			
+			<?php do_action('et_header_menu'); ?>
+				<nav id="top-menu">
+					<?php
+						$menuClass = 'nav';
+						$primaryNav = '';
+
+						$primaryNav = wp_nav_menu( array( 'theme_location' => 'primary-menu', 'container' => '', 'fallback_cb' => '', 'menu_class' => $menuClass, 'echo' => false ) );
+
+						if ( '' == $primaryNav ) { ?>
+							<ul class="<?php echo esc_attr( $menuClass ); ?>">
+								<?php if ( 'on' == et_get_option( 'divi_home_link' ) ) { ?>
+									<li <?php if ( is_home() ) echo( 'class="current_page_item"' ); ?>><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e('Home','Divi') ?></a></li>
+								<?php } ?>
+
+								<?php show_page_menu( $menuClass, false, false ); ?>
+								<?php show_categories_menu( $menuClass, false ); ?>
+							</ul>
+					<?php }
+						else echo($primaryNav);
+					?>
+				</nav>
+            </div> <!-- end .container -->
+        </div>
+    </header>
+
+<?php
+}
+?>
 	
